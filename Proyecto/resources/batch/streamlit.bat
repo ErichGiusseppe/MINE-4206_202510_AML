@@ -3,9 +3,12 @@ cd..
 cd..
 setlocal
 set PROJECTPATH=%cd%
-set PYTHONPATH=%PYTHON310_HOME%;%cd%
-echo "Enviroment variable at '%PYTHONPATH%"
+set PYTHONDIR=%PYTHONPATH%
+echo "Python installed at: '%PYTHONDIR%'"
+echo "My project path is: '%PROJECTPATH%'"
 set MAINPATH=%PROJECTPATH%\streamlit_app.py
-echo "Starting the app at '%MAINPATH%'"
-%PYTHON310_HOME%\python -m streamlit run "%MAINPATH%"
+set PATH=%PYTHONDIR%;%PATH%
+echo "Run command is: 'python.exe -m streamlit run "%MAINPATH%"'"
+python.exe -m streamlit run "%MAINPATH%"
 endlocal
+
